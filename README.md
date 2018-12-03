@@ -116,7 +116,7 @@ console.log(r);
 
 `npm install graphql-mysql-schema --g`
 
-`mygql -H 127.0.0.1 -P 3306 -U myuser -p mypwd -D pulse t2`
+`mygql -H 127.0.0.1 -P 3306 -U myuser -p mypwd -D mydb t2`
 
 output:
 
