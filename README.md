@@ -47,7 +47,7 @@ type t2 {
 ```
 default generate rules:
 
-| mysql type | graphql tpye |
+| mysql type | graphql type |
 | -- | -- |
 | varchar | String |
 | char | String |

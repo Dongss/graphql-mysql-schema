@@ -4,7 +4,7 @@ const program = require('commander');
 const mysqlGQL = require('../lib/schema')
 
 program
-    .version('0.1.0')
+    .version('0.1.5')
     .usage('[option s] <tablename ...>')
     .option('-H, --host [value]', 'Mysql host')
     .option('-P, --port [value]', 'Mysql port')
