@@ -1,6 +1,6 @@
 {
   "name": "graphql-mysql-schema",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generate mysql table schema to graphql defination",
   "main": "lib/schema.js",
   "scripts": {

@@ -98,7 +98,7 @@ function genType(input) {
     return gType;
 }
 
-mysqlGQL({
+let r = await mysqlGQL({
     host: '127.0.0.1',
     port: 3306,
     user: "myuser",
@@ -108,13 +108,15 @@ mysqlGQL({
     tableName: 't2',
     genFn: genType
 });
+
+console.log(r);
 ```
 
 ## CLI
 
 `npm install graphql-mysql-schema --g`
 
-`mygql -H 127.0.0.1 -P 3306 -U root -p admin.nio -D pulse t2`
+`mygql -H 127.0.0.1 -P 3306 -U myuser -p mypwd -D pulse t2`
 
 output:
 
