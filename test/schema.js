@@ -43,6 +43,9 @@ test('genGQL with default function', t => {
 });
 
 test('genGQL with user define function', t => {
+    function genType(input) {
+        return input + '_';
+    }
     let r = mysqlGQL.genGQL('t1', TableSchema, genType);
     let s = `
 type t1 {
@@ -53,12 +56,4 @@ type t1 {
 }
 `;
     t.is(r, s);
-});
-
-test('throws', t => {
-	const error = t.throws(() => {
-		fn();
-	}, TypeError);
-
-	t.is(error.message, '🦄');
 });
