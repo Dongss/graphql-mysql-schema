@@ -6,11 +6,11 @@ const overrideRules = {
 
 async function main() {
     let r = await mysqlGQL({
-        host: '10.110.3.218',
+        host: '127.0.0.1',
         port: 3306,
         user: "root",
-        password: 'admin.nio',
-        database: 'pulse'
+        password: 'pwd',
+        database: 'db'
     }, {
         tableName: 't2',
         genRule: overrideRules
