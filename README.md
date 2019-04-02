@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Dongss/graphql-mysql-schema.svg?branch=master)](https://travis-ci.org/Dongss/graphql-mysql-schema)
 [![Coverage Status](https://coveralls.io/repos/github/Dongss/graphql-mysql-schema/badge.svg?branch=master)](https://coveralls.io/github/Dongss/graphql-mysql-schema?branch=master)
+[![NPM version](https://img.shields.io/npm/v/graphql-mysql-schema.svg?style=flat)](https://www.npmjs.com/package/graphql-mysql-schema)
 [![Dependency Status](https://dependencyci.com/github/Dongss/graphql-mysql-schema/badge)](https://dependencyci.com/github/Dongssgraphql-mysql-schema)
 
 Generate mysql table schema to graphql defination
@@ -79,9 +80,30 @@ mysqlOpt: [reference](https://github.com/mysqljs/mysql#connection-options)
 options:
 
 * tableName: `string`, name of mysql table. required
-* genFn: `function`, rule of generating columns, user-defined rule. optional
+* genRule: `function` or `object`, rule of generating columns, user-defined rule. optional
 
-genFn example:
+Example: override default type rules
+
+```
+// "varchar" will be generated as "my-type" type, instead of "String"
+const overrideRules = {
+    varchar: 'my-type',
+};
+let r = await mysqlGQL({
+    host: '127.0.0.1',
+    port: 3306,
+    user: "root",
+    password: 'pwd',
+    database: 'db'
+}, {
+    tableName: 'tn',
+    genRule: overrideRules
+});
+
+console.log(r);
+```
+
+Example: user define generate rule
 
 ```
 const TypeMap = {
@@ -114,7 +136,7 @@ console.log(r);
 
 ## CLI
 
-`npm install graphql-mysql-schema --g`
+`npm install graphql-mysql-schema -g`
 
 `mygql -H 127.0.0.1 -P 3306 -U myuser -p mypwd -D mydb t2`
 
@@ -148,7 +170,6 @@ Options:
   -D, --database [value]  Mysql database
   -h, --help              output usage information
 ```
-
 
 ## Test
 
