@@ -24,7 +24,7 @@ const TypeMap = {
 };
 
 function genType(input) {
-    let gType = TypeMap.hasOwnProperty(input) ? TypeMap[input] : 'UNKOWN';
+    let gType = TypeMap.hasOwnProperty(input) ? TypeMap[input] : 'UNKNOWN';
     return gType;
 }
 

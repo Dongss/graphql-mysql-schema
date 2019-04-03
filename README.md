@@ -69,7 +69,7 @@ default generate rules:
 | datetime | String |
 | timestamp | String |
 | year | String |
-| `Others` | UNKOWN |
+| `Others` | UNKNOWN |
 
 ### Options
 
@@ -81,6 +81,7 @@ options:
 
 * tableName: `string`, name of mysql table. required
 * genRule: `function` or `object`, rule of generating columns, user-defined rule. optional
+* unknown: unknown type, default "UNKNOWN", optional
 
 Example: override default type rules
 
@@ -116,7 +117,7 @@ const TypeMap = {
 
 // input: string, column type in mysql
 function genType(input) {
-    let gType = TypeMap.hasOwnProperty(input) ? TypeMap[input] : 'UNKOWN';
+    let gType = TypeMap.hasOwnProperty(input) ? TypeMap[input] : 'UNKNOWN';
     return gType;
 }
 
